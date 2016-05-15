@@ -1,0 +1,63 @@
+conky.config = {
+
+    background = true,
+    use_xft = true,
+    font = "sans:size=11",
+    xftalpha = 1,
+    update_interval = 1.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = "override",
+    own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+    double_buffer = true,
+    minimum_height = 3,
+    maximum_width = 1500,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    default_color = "Black",
+    default_shade_color = "000000",
+    default_outline_color = d9d7d6,
+    alignment = tl,
+    gap_x = 45,
+    gap_y = 720,
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    override_utf8_locale = true,
+    format_human_readable = true,
+}
+
+
+conky.text = [[
+
+## Conky-a bera,
+
+
+TEXT
+${font freeserif:bold:size=10} \
+           \
+${color #35BF5C}Βολ.${color white} ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} \
+   \
+${color #35BF5C} Αργια ${color white} %${exec light -G} \
+     \
+${color #35BF5C}ΖΠΟΥ ${color white}%${cpu cpu0} \
+     \
+${color #35BF5C}ΡΑΜ ${color white}$mem (%$memperc) \
+                             \
+${time %F} ${color #35BF5C}${time %A} ${color white}${time %R} \
+                                  \
+${color #35BF5C} Μπατερια ${color white}${battery_short BAT1} (${battery_time BAT1}) \
+      \
+${color #35BF5C} Μααηγαινα ${color white}${desktop_name} \
+      \
+${color #35BF5C}Χαητσι ${color white}${downspeed wlp2s0} \
+  \
+${color #35BF5C}Ηγο ${color white}${upspeed wlp2s0} \
+\
+${color #BEBEBE}(%${wireless_link_qual_perc wlp2s0})
+
+
+]]
